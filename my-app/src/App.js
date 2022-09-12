@@ -1,5 +1,6 @@
 import './App.css';
 import Mainboard from './components/Mainboard';
+import Profile from './components/Profile';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
      
       <Sidebar/>
       <Mainboard/>
+      <Profile/>
 
 
     </div>
