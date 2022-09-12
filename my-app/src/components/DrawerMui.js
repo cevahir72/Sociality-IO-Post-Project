@@ -20,8 +20,9 @@ const Toolbar1 = styled(Toolbar)({
   height: "100vh",
   alignItems: "start",
   paddingTop: "4rem",
-  background: "rgba(57, 61, 66, 0.8)",
+  background: "#2A2F33",
   color: "white",
+  fontSize:"17px"
 });
 
 const DrawerMui = () => {
@@ -51,31 +52,50 @@ const DrawerMui = () => {
             <ListItemText>SUMMARY</ListItemText>
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={handleClick}>
-            <ListItemIcon>
-              <NoteAltOutlinedIcon sx={{ color: "#f55661" }} />
-            </ListItemIcon>
-            <ListItemText>PUBLISH</ListItemText>
-            {open ? <RemoveIcon /> : <AddIcon />}
-          </ListItemButton>
-        </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton >
-                <ListItemIcon fontSize="small" sx={{color:"white"}}>
-                  <FiberManualRecordRounded fontSize="inherit"/>
+        { open ? (
+          <>
+            <ListItem disablePadding sx={{backgroundColor:"#f55661"}}>
+              <ListItemButton onClick={handleClick}>
+                <ListItemIcon>
+                  <NoteAltOutlinedIcon sx={{ color: "white" }} />
                 </ListItemIcon>
-                <ListItemText primary="Compose" />
+                <ListItemText>PUBLISH</ListItemText>
+                <RemoveIcon/>
               </ListItemButton>
-              <ListItemButton >
-                <ListItemIcon fontSize="small" sx={{color:"#f55661"}}>
-                  <FiberManualRecordRounded fontSize="inherit"/>
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItemButton >
+                    <ListItemIcon fontSize="small" sx={{color:"white"}}>
+                      <FiberManualRecordRounded fontSize="inherit"/>
+                    </ListItemIcon>
+                    <ListItemText primary="Compose" />
+                  </ListItemButton>
+                  <ListItemButton >
+                    <ListItemIcon fontSize="small" sx={{color:"#f55661"}}>
+                      <FiberManualRecordRounded fontSize="inherit"/>
+                    </ListItemIcon>
+                    <ListItemText primary="Feed" sx={{color:"#f55661"}} />
+                  </ListItemButton>
+                </List>
+              </Collapse>
+          </>
+              
+        ) : (
+          <>
+          <ListItem disablePadding>
+              <ListItemButton onClick={handleClick}>
+                <ListItemIcon>
+                  <NoteAltOutlinedIcon sx={{ color: "#f55661" }} />
                 </ListItemIcon>
-                <ListItemText primary="Feed" sx={{color:"#f55661"}} />
+                <ListItemText>PUBLISH</ListItemText>
+                <AddIcon/>
               </ListItemButton>
-            </List>
-          </Collapse>
+            </ListItem>
+          </>
+        )}
+        
+
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -106,3 +126,7 @@ const DrawerMui = () => {
 };
 
 export default DrawerMui;
+
+
+
+// {open ? <RemoveIcon /> : <AddIcon />}

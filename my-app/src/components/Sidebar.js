@@ -5,13 +5,12 @@ import DrawerMui from './DrawerMui';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 const SidebarComp = styled ("div") ({
-    flex:"2",
-    width:"100%",
+    width:"15%",
     backgroundColor:"rgb(245,247,248)"
 })
 
 const Inner = styled ("div") ({
-    background: "rgba(57, 61, 66,0.8)",
+    background: "#2A2F33",
     width:"25%",
     display:"flex",
     flexDirection:"column",
@@ -20,7 +19,7 @@ const Inner = styled ("div") ({
 })
 
 const Logos = styled ("div") ({
-    height:"100vh",
+    height:"120vh",
     width:"100%",
     padding:"0",
     color:"white"
@@ -32,6 +31,8 @@ const Logo = styled ("div")({
     display:"flex",
     justifyContent:"center",
     alignItems:"center",
+    width:"274px",
+    height:"51px"
 })
 
 const ImgCont = styled("div") ({
@@ -43,8 +44,8 @@ const ImgCont = styled("div") ({
 })
 
 const Img = styled("img")({
-    width:"2.5rem",
-    height:"2.5rem",
+    width:"37px",
+    height:"37px",
     borderRadius:"5px",
     cursor:"pointer"
 })
