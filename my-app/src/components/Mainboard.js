@@ -89,7 +89,7 @@ const Mainboard = () => {
                 <Li><Span><FiberManualRecordIcon fontSize='inherit' color='primary'/></Span> Notes</Li>
             </MyList>
         </Box1>
-        <Typography variant="h6" color="secondary">17 June 2021</Typography>
+        <Typography sx={{fontSize:"18px"}} color="secondary">17 June 2021</Typography>
          <PostContainer1>
             {
                 firstData.map((item, index)=>(
@@ -97,8 +97,8 @@ const Mainboard = () => {
                 ))
             }
          </PostContainer1>
-         <Typography variant="h6" color="secondary">01 July 2021</Typography>
-         <PostContainer2>
+         <Typography sx={{fontSize:"18px"}} color="secondary">01 July 2021</Typography>
+         <PostContainer2 sx={{marginBottom:"4rem"}}>
          {
                 secondData.map((item, index)=>(
                     <Container key={index} item={item}/>

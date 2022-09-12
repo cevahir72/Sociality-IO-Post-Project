@@ -32,17 +32,10 @@ const Paper1 = styled(Paper)({
   marginBottom: "20px",
 });
 
-const Status = styled(Box)({
-  width: "100px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "#3ac183",
-});
 
 const Card1 = styled(Card)({
-  width: "320px",
-  height: "100%",
+  width: "329px",
+  height: "446px",
   border: "none",
 });
 
@@ -81,7 +74,7 @@ const MyCard = ({ item, entry }) => {
         {item.status === 1 && (
           <Box
             sx={{
-              width: "100px",
+              width: "40px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -102,7 +95,7 @@ const MyCard = ({ item, entry }) => {
         {item.status === 3 && (
           <Box
             sx={{
-              width: "100px",
+              width: "40px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -123,7 +116,7 @@ const MyCard = ({ item, entry }) => {
         {item.status === 0 && (
           <Box
             sx={{
-              width: "100px",
+              width: "40px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -144,48 +137,52 @@ const MyCard = ({ item, entry }) => {
 
         <Box>
           <Card1>
-            <CardHeader
-              subheader={item.published_at}
-              action={
-                <IconButton>
-                  <DoDisturbIcon />
-                </IconButton>
-              }
-            />
+            <Box sx={{display:"flex", justifyContent:"space-between",padding:"16px", alignItems:"center"}}>
+                <Box>
+                  <Typography sx={{fontSize:"14px", color:"#ACACAC"}}>{item.published_at}</Typography>
+                </Box>
+                <Box >
+                <IconButton size="small">
+                <DoDisturbIcon fontSize="inherit"  color="secondary"/>
+              </IconButton>
+              <IconButton size="small">
+                <DeleteIcon  fontSize="inherit" color="secondary"/>
+              </IconButton >
+              <IconButton size="small">
+                <MoreHorizIcon fontSize="inherit" color="secondary"/>
+              </IconButton>
+                </Box>
+
+            </Box>
             <CardContent>
-              <Typography>{entry.message}</Typography>
+              <Typography sx={{color:"#959595", fontSize:"14px"}}>{entry.message}</Typography>
             </CardContent>
             {
               !entry.image[0] ? (
-                <CardMedia
-                component="img"
-                height="200"
-                image={noPostImage}
-                alt="NO-POST-IMAGE"
-              />
-
+                <Box sx={{width:"329px",height:"239px", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                  <img src={noPostImage} alt="NO-POST-IMAGE" style={{width:"284px", height:"239px"}}/>
+                  </Box>
               ): (
-                <CardMedia
-                component="img"
-                height="200"
-                image={entry.image[0]}
-                alt="NO-POST-IMAGE"
-              />
+                <Box sx={{width:"329px",height:"239px", paddingLeft:"16px"}}><img src={entry.image[0]} alt="NO-POST-IMAGE" style={{width:"284px", height:"239px"}}/></Box>
               )
             }
             <CardActions disableSpacing>
-              <IconButton fontSize="small">
-                <ThumbUpOutlinedIcon  fontSize="inherit"/>
+              <IconButton >
+                <ThumbUpOutlinedIcon  color="secondary"/>
               </IconButton>
-              <IconButton>
-                <ModeCommentOutlinedIcon />
+              <Typography color="secondary">0</Typography>
+              <IconButton >
+                <ModeCommentOutlinedIcon color="secondary"/>
               </IconButton>
-              <IconButton>
-                <ShareOutlinedIcon />
+              <Typography color="secondary">0</Typography>
+              <IconButton >
+                <ShareOutlinedIcon color="secondary"/>
               </IconButton>
-              <IconButton>
-                <VisibilityOutlinedIcon />
+              <Typography color="secondary">0</Typography>
+              <IconButton >
+                <VisibilityOutlinedIcon color="secondary"/>
               </IconButton>
+              <Typography color="secondary">0</Typography>
             </CardActions>
           </Card1>
         </Box>
