@@ -22,6 +22,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import noPostImage from "../helpers/no-post-image.png";
 //MATERIAL THEME
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+//DATE-FNS
+import {format} from "date-fns";
 
 const Paper1 = styled(Paper)({
   width: "369px",
@@ -140,6 +142,7 @@ const MyCard = ({ item, entry }) => {
             <Box sx={{display:"flex", justifyContent:"space-between",padding:"16px", alignItems:"center"}}>
                 <Box>
                   <Typography sx={{fontSize:"14px", color:"#ACACAC"}}>{item.published_at}</Typography>
+                  {/* <Typography sx={{fontSize:"14px", color:"#ACACAC"}}>{`${format(item.published_at,"yyyy-MM-dd'T'HH:mm:ss")}`}</Typography> */}
                 </Box>
                 <Box >
                 <IconButton size="small">
