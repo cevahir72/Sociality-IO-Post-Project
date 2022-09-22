@@ -160,7 +160,7 @@ const MyCard = ({ item, entry }) => {
             <CardContent>
               <Typography sx={{color:"#959595", fontSize:"14px"}}>{entry.message}</Typography>
             </CardContent>
-            {
+            {/* {
               !entry.image[0] ? (
                 <Box sx={{width:"329px",height:"239px", display:"flex", justifyContent:"center", alignItems:"center"}}>
                   <img src={noPostImage} alt="NO-POST-IMAGE" style={{width:"284px", height:"239px"}}/>
@@ -168,7 +168,12 @@ const MyCard = ({ item, entry }) => {
               ): (
                 <Box sx={{width:"329px",height:"239px", paddingLeft:"16px"}}><img src={entry.image[0]} alt="NO-POST-IMAGE" style={{width:"284px", height:"239px"}}/></Box>
               )
-            }
+            } */}
+            <Box sx={{width:"329px",height:"239px", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                <img src={ entry.image || noPostImage  } alt="NO-POST-IMAGE" style={{width:"284px", height:"239px"}}/>
+            </Box>
+
+
             <CardActions disableSpacing>
               <IconButton >
                 <ThumbUpOutlinedIcon  color="secondary"/>
